@@ -17,3 +17,5 @@ _
 -src/main/java/study/querydsl/entity/Team.java,5/4/54f229cb91ad9f5bed3a56dbf9e0be01bf2426f7
 c
 3src/test/java/study/querydsl/entity/MemberTest.java,5/9/5987df81d4d5f68a1349afa744e883720e9b33ac
+c
+3src/test/java/study/querydsl/QuerydslBasicTest.java,b/b/bb62e3e45233c3f09344a56a39c31d43c2fa9bf4
