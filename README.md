@@ -367,3 +367,240 @@ public void theta_join() throws Exception {
    .containsExactly("teamA", "teamB");
 }
 ```
+---
+
+- 조인 on
+   - 연관관계 없는 엔티티를 조인할때 주로 사용함
+```
+1, 조인 대상 필터링
+/**
+* 예) 회원과 팀을 조인하면서, 팀 이름이 teamA인 팀만 조인, 회원은 모두 조회
+* JPQL: SELECT m, t FROM Member m LEFT JOIN m.team t on t.name = 'teamA'
+* SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.TEAM_ID=t.id and
+ t.name='teamA'
+  */
+ @Test
+ public void join_on_filtering() throws Exception {
+     List<Tuple> result = queryFactory
+             .select(member, team)
+             .from(member)
+             .leftJoin(member.team, team).on(team.name.eq("teamA"))
+             .fetch();
+     for (Tuple tuple : result) {
+         System.out.println("tuple = " + tuple);
+   }
+}
+
+2, 연관관계 없는 엔티티 외부 조인
+/**
+* 2. 연관관계 없는 엔티티 외부 조인
+* 예) 회원의 이름과 팀의 이름이 같은 대상 외부 조인
+* JPQL: SELECT m, t FROM Member m LEFT JOIN Team t on m.username = t.name
+* SQL: SELECT m.*, t.* FROM Member m LEFT JOIN Team t ON m.username = t.name */
+ @Test
+ public void join_on_no_relation() throws Exception {
+     em.persist(new Member("teamA"));
+     em.persist(new Member("teamB"));
+     List<Tuple> result = queryFactory
+             .select(member, team)
+             .from(member)
+             .leftJoin(team).on(member.username.eq(team.name))
+             .fetch();
+     for (Tuple tuple : result) {
+         System.out.println("t=" + tuple);
+   }
+}
+```
+
+- 페치 조인
+   - `join(), leftJoin()` 등 조인 기능 뒤에 `fetchJoin()` 이라고 추가하면 된다.
+```
+@PersistenceUnit
+EntityManagerFactory emf;
+
+@Test
+ public void fetchJoinNo() throws Exception {         //페치조인 미적용
+     em.flush();
+     em.clear();
+     Member findMember = queryFactory
+             .selectFrom(member)
+             .where(member.username.eq("member1"))
+             .fetchOne();
+     boolean loaded = emf.getPersistenceUnitUtil().isLoaded(findMember.getTeam());   // 이미 로딩된 entity인지 초기화 안된 entity인지 확인해주는 기능
+      assertThat(loaded).as("페치 조인 미적용").isFalse();
+}
+--------------------------------------------------------------------------------------
+
+@Test
+ public void fetchJoinUse() throws Exception {
+     em.flush();
+     em.clear();
+     Member findMember = queryFactory
+             .selectFrom(member)
+             .join(member.team, team).fetchJoin()
+             .where(member.username.eq("member1"))
+             .fetchOne();
+     boolean loaded = emf.getPersistenceUnitUtil().isLoaded(findMember.getTeam());
+assertThat(loaded).as("페치 조인 적용").isTrue(); }
+}
+```
+
+- 서브 쿼리 사용
+   - `com.querydsl.jpa.JPAExpressions` 사용 (static import로 대채 가능)
+```
+서브 쿼리 eq 사용
+/**
+* 나이가 가장 많은 회원 조회 */
+@Test
+public void subQuery() throws Exception {
+   QMember memberSub = new QMember("memberSub");
+
+   List<Member> result = queryFactory
+                  .selectFrom(member)
+                  .where(member.age.eq(
+                     JPAExpressions                    //static import 가능
+                        .select(memberSub.age.max())
+                        .from(memberSub)
+                  ))
+                  .fetch();
+
+   assertThat(result).extracting("age").containsExactly(40);
+}
+
+--------------------------------------------------------------------------------------
+
+서브쿼리 goe 사용
+/**
+* 나이가 평균 나이 이상인 회원 */
+@Test
+public void subQueryGoe() throws Exception {
+   QMember memberSub = new QMember("memberSub");
+
+   List<Member> result = queryFactory
+                  .selectFrom(member)
+                  .where(member.age.goe(
+                     JPAExpressions
+                           .select(memberSub.age.avg())
+                           .from(memberSub)
+                  ))
+                  .fetch();
+
+   assertThat(result).extracting("age").containsExactly(30,40);
+}
+
+--------------------------------------------------------------------------------------
+
+서브쿼리 여러 건 사용 in 사용
+/**
+* 서브쿼리 여러 건 처리, in 사용 */
+@Test
+public void subQueryIn() throws Exception {
+   QMember memberSub = new QMember("memberSub");
+
+   List<Member> result = queryFactory
+                  .selectFrom(member)
+                  .where(member.age.in(
+                           JPAExpressions
+                                 .select(memberSub.age)
+                                 .from(memberSub)
+                                 .where(memberSub.age.gt(10))
+                  ))
+                  .fetch();
+
+   assertThat(result).extracting("age").containsExactly(20, 30, 40);
+}
+
+--------------------------------------------------------------------------------------
+
+select 절에 subquery사용
+ List<Tuple> fetch = queryFactory
+         .select(member.username,
+                 JPAExpressions
+                         .select(memberSub.age.avg())
+                         .from(memberSub)
+         ).from(member)
+         .fetch();
+
+ for (Tuple tuple : fetch) {
+     System.out.println("username = " + tuple.get(member.username));
+     System.out.println("age = " + tuple.get(JPAExpressions.select(memberSub.age.avg()).from(memberSub)));
+}
+
+--------------------------------------------------------------------------------------
+
+static import 활용
+ import static com.querydsl.jpa.JPAExpressions.select;
+
+ List<Member> result = queryFactory
+         .selectFrom(member)
+         .where(member.age.eq(
+                 select(memberSub.age.max())
+.from(memberSub)
+)) .fetch();
+```
+
+- Case문 활용
+   - select, 조건절(where), order by에서 사용 가능
+```
+단순조건
+List<String> result = queryFactory
+         .select(member.age
+            .when(10).then("열살")
+            .when(20).then("스무살")
+            .otherwise("기타"))
+         .from(member)
+         .fetch();
+
+--------------------------------------------------------------------------------------
+
+복잡한 조건
+List<String> result = queryFactory
+        .select(new CaseBuilder()
+               .when(member.age.between(0, 20)).then("0~20살")
+               .when(member.age.between(21, 30)).then("21~30살")
+               .otherwise("기타"))
+        .from(member)
+        .fetch();
+
+--------------------------------------------------------------------------------------
+
+orderBy에서 Case문 함께 사용하기 예제
+예를 들어서 다음과 같은 임의의 순서로 회원을 출력하고 싶다면? 1. 0~30살이아닌회원을가장먼저출력
+2. 0~20살회원출력
+3. 21~30살회원출력
+ NumberExpression<Integer> rankPath = new CaseBuilder()
+         .when(member.age.between(0, 20)).then(2)
+         .when(member.age.between(21, 30)).then(1)
+         .otherwise(3);
+
+ List<Tuple> result = queryFactory
+         .select(member.username, member.age, rankPath)
+         .from(member)
+         .orderBy(rankPath.desc())
+         .fetch();
+
+ for (Tuple tuple : result) {
+     String username = tuple.get(member.username);
+     Integer age = tuple.get(member.age);
+     Integer rank = tuple.get(rankPath);
+     System.out.println("username = " + username + " age = " + age + " rank = " +rank);
+}
+
+--------------------------------------------------------------------------------------
+
+상수, 문자 더하기
+상수가 필요하면 `Expressions.constant(xxx)` 사용
+Tuple result = queryFactory
+         .select(member.username, Expressions.constant("A"))
+         .from(member)
+         .fetchFirst();
+
+--------------------------------------------------------------------------------------
+
+문자 더하기 concat
+ String result = queryFactory
+         .select(member.username.concat("_").concat(member.age.stringValue()))
+         .from(member)
+         .where(member.username.eq("member1"))
+         .fetchOne();
+```
