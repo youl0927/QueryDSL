@@ -604,3 +604,236 @@ Tuple result = queryFactory
          .where(member.username.eq("member1"))
          .fetchOne();
 ```
+---
+
+- 프로젝션 대상이 하나일 경우
+```
+List<String> result = queryFactory
+   .select(member.username)
+   .from(member)
+   .fetch();
+```
+
+- 튜플 조회
+```
+List<Tuple> result = queryFactory
+      .select(member.username, member.age)
+      .from(member)
+      .fetch();
+
+for (Tuple tuple : result) {
+   String username = tuple.get(member.username);
+   Integer age = tuple.get(member.age);
+   System.out.println("username=" + username);
+   System.out.println("age=" + age);
+}
+```
+
+- 프로젝션 결과 반환 - DTO
+```
+DTO 생성
+@Data
+public class MemberDto {
+   private String username;
+   private int age;
+
+   public MemberDto() {
+   }
+
+   public MemberDto(String username, int age) {
+      this.username = username;
+      this.age = age;
+   }
+}
+
+조회 (JPQL)
+List<MemberDto> result = em.createQuery(
+                  "select new study.querydsl.dto.MemberDto(m.username, m.age) from Member m", MemberDto.class)
+                  .getResultList();
+
+조회(query DSL)
+프로퍼티 접근 - Setter
+List<MemberDto> result = queryFactory
+         .select(Projections.bean(MemberDto.class,
+                  member.username,
+                  member.age))
+         .from(member)
+         .fetch();
+
+필드 직접 접
+List<MemberDto> result = queryFactory
+         .select(Projections.bean(MemberDto.class,
+                  member.username,
+                  member.age))
+         .from(member)
+         .fetch();
+
+별칭이 다를때
+@Data
+public class UserDto {
+   private String name;
+   private int age;
+}
+
+List<UserDto> fetch = queryFactory
+         .select(Projections.fields(UserDto.class,
+                  member.username.as("name"),                     
+                  ExpressionUtils.as(
+                              JPAExpressions
+                                    .select(memberSub.age.max())
+                                    .from(memberSub), "age")
+                  )
+      ).from(member)
+      .fetch();
+
+생성자 사용
+List<MemberDto> result = queryFactory
+         .select(Projections.constructor(MemberDto.class,
+                  member.username,
+                  member.age))
+         .from(member)
+         .fetch();
+}
+```
+
+- 프로젝션 결과 반환 - @QueryProjection
+```
+@Data
+public class MemberDto {
+   private String username;
+   private int age;
+
+   public MemberDto() {
+   }
+
+   @QueryProjection                              //이 어노테이션을 써줘야 QDto가 클래스가 생성담
+   public MemberDto(String username, int age) {
+   this.username = username;
+   this.age = age;
+   }
+
+}
+
+
+List<MemberDto> result = queryFactory
+      .select(new QMemberDto(member.username, member.age))
+      .from(member)
+```
+
+- distinct
+```
+List<String> result = queryFactory
+      .select(member.username).distinct()
+      .from(member)
+      .fetch();
+```
+
+- 동적쿼리
+```
+@Test
+public void 동적쿼리_BooleanBuilder() throws Exception {
+   String usernameParam = "member1";
+   Integer ageParam = 10;
+
+   List<Member> result = searchMember1(usernameParam, ageParam);
+   Assertions.assertThat(result.size()).isEqualTo(1);
+   }
+
+   private List<Member> searchMember1(String usernameCond, Integer ageCond) {
+   BooleanBuilder builder = new BooleanBuilder();
+
+   if (usernameCond != null) {
+      builder.and(member.username.eq(usernameCond));
+   }
+
+   if (ageCond != null) {
+      builder.and(member.age.eq(ageCond));
+   }
+
+   return queryFactory
+            .selectFrom(member)
+            .where(builder)
+            .fetch();
+}
+```
+
+- 동적쿼리 - where 다중 파라미터 사용
+   - where 조건에 null 값은 무시된다.
+   - 메서드를 다른 쿼리에서도 재활용 할 수 있다.
+   - 쿼리 자체의 가독성이 높아진다.
+```
+@Test
+public void 동적쿼리_WhereParam() throws Exception {
+String usernameParam = "member1";
+Integer ageParam = 10;
+
+List<Member> result = searchMember2(usernameParam, ageParam);
+Assertions.assertThat(result.size()).isEqualTo(1);
+}
+
+private List<Member> searchMember2(String usernameCond, Integer ageCond) {
+   return queryFactory
+               .selectFrom(member)
+               .where(usernameEq(usernameCond), ageEq(ageCond))
+               .fetch();
+}
+
+private BooleanExpression usernameEq(String usernameCond) {
+   return usernameCond != null ? member.username.eq(usernameCond) : null;
+}
+
+private BooleanExpression ageEq(Integer ageCond) {
+   return ageCond != null ? member.age.eq(ageCond) : null;
+}
+
+-----------------------------------------------------------------------------------------
+private BooleanExpression allEq(String usernameCond, Integer ageCond) {
+   return usernameEq(usernameCond).and(ageEq(ageCond));
+}
+이런식으로 조합도 가능하지만 null 체크를 해줘야
+```
+
+- 수정, 삭제 벌크 연산
+```
+쿼리 한번으로 대량 데이터 수정할 경우
+long count = queryFactory
+      .update(member)
+      .set(member.username, "비회원")
+      .where(member.age.lt(28))
+      .execute();
+
+기존 숫자에 1 더하기
+long count = queryFactory
+      .update(member)
+      .set(member.age, member.age.add(1))
+      .execute();
+
+쿼리 한번으로 대량 데이터 삭제
+long count = queryFactory
+      .delete(member)
+      .where(member.age.gt(18))
+      .execute();
+```
+
+- SQL function 호출 하는 방법
+```
+member -> M으로 변경하는 replace 함수 사용
+String result = queryFactory
+         .select(Expressions.stringTemplate("function('replace', {0}, {1}, {2})", member.username, "member", "M"))
+         .from(member)
+         .fetchFirst();
+
+소문자로 변경해서 비교해라
+String result = queryFactory
+         .select(member.username)
+         .from(member)
+         .where(member.username.eq(Expressions.stringTemplate("function('lower', {0})", member.username)))
+         .fetchFirst();
+
+lower 같은 ansi 표준 함수들은 querydsl이 상당부분 내장하고 있다. 따라서 다음과 같이 처리해도 결과는 같다.
+String result = queryFactory
+         .select(member.username)
+         .from(member)
+         .where(member.username.eq(member.username.lower()))
+         .fetchFirst();
+```
