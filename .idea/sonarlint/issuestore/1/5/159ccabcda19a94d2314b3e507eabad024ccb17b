@@ -1,0 +1,16 @@
+
+
+java:S2259ƒ"GA "NullPointerException" could be thrown; "ageGoeEq()" can return null.(—Êíúÿÿÿÿ8èƒõ2J$5c6aa5e0-a75e-443a-a325-4bd333f4388d
+	java:S100."NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÖ¾£8ˆèƒõ2J$24d3d5a7-254b-47dc-a1c3-f350532ad3eb
+	java:S1009"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(µˆ¸p8‰èƒõ2J$e043cfe2-b27d-45b9-a230-df66a7d067b0
+
+java:S1128">Remove this unused import 'com.querydsl.core.types.Predicate'.(õøº¸8ó´…õ2J$da38c095-0d95-4f01-a805-da4b3902f1c5
+ƒ
+java:S1128
+"ARemove this unused import 'org.springframework.util.StringUtils'.(Ğôÿ8ó´…õ2J$5e1923c0-7b7d-486c-b12f-a5124c3c8dc3
+‚
+java:S1128":Remove this unused import 'study.querydsl.dto.QMemberDto'.(ÊàÌÕşÿÿÿÿ8ó´…õ2J$f8121de8-d510-4e53-ac25-76f03bd20345
+‚
+java:S1128":Remove this unused import 'study.querydsl.entity.QMember'.(Èõ™¯ùÿÿÿÿ8ó´…õ2J$78f17b4b-07d8-4a79-bc90-0bb24fa50fee
+{
+java:S1128"8Remove this unused import 'study.querydsl.entity.QTeam'.(ó÷˜ª8ó´…õ2J$b7962bc2-a58f-4b81-a337-5ac6b127719b

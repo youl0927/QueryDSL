@@ -1,0 +1,1996 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.querydsl.QuerydslBasicTest" tests="31" skipped="0" failures="0" errors="0" timestamp="2024-07-28T12:28:45" hostname="jeonghoeyul-ui-MacBookPro.local" time="0.792">
+  <properties/>
+  <testcase name="startJPQL()" classname="study.querydsl.QuerydslBasicTest" time="0.052"/>
+  <testcase name="subQuery()" classname="study.querydsl.QuerydslBasicTest" time="0.09"/>
+  <testcase name="aggresgation()" classname="study.querydsl.QuerydslBasicTest" time="0.123"/>
+  <testcase name="basicCase()" classname="study.querydsl.QuerydslBasicTest" time="0.09"/>
+  <testcase name="concat()" classname="study.querydsl.QuerydslBasicTest" time="0.059"/>
+  <testcase name="simpleProjection()" classname="study.querydsl.QuerydslBasicTest" time="0.02"/>
+  <testcase name="fetchJoin()" classname="study.querydsl.QuerydslBasicTest" time="0.015"/>
+  <testcase name="findDtoByFields()" classname="study.querydsl.QuerydslBasicTest" time="0.011"/>
+  <testcase name="selectSubquery()" classname="study.querydsl.QuerydslBasicTest" time="0.019"/>
+  <testcase name="startQuerydsl()" classname="study.querydsl.QuerydslBasicTest" time="0.009"/>
+  <testcase name="search()" classname="study.querydsl.QuerydslBasicTest" time="0.018"/>
+  <testcase name="subQueryIn()" classname="study.querydsl.QuerydslBasicTest" time="0.02"/>
+  <testcase name="paging1()" classname="study.querydsl.QuerydslBasicTest" time="0.013"/>
+  <testcase name="paging2()" classname="study.querydsl.QuerydslBasicTest" time="0.008"/>
+  <testcase name="findDtoBySetter()" classname="study.querydsl.QuerydslBasicTest" time="0.013"/>
+  <testcase name="constant()" classname="study.querydsl.QuerydslBasicTest" time="0.014"/>
+  <testcase name="resultFetch()" classname="study.querydsl.QuerydslBasicTest" time="0.025"/>
+  <testcase name="join()" classname="study.querydsl.QuerydslBasicTest" time="0.017"/>
+  <testcase name="sort()" classname="study.querydsl.QuerydslBasicTest" time="0.01"/>
+  <testcase name="group()" classname="study.querydsl.QuerydslBasicTest" time="0.009"/>
+  <testcase name="subQueryGoe()" classname="study.querydsl.QuerydslBasicTest" time="0.01"/>
+  <testcase name="thet_join()" classname="study.querydsl.QuerydslBasicTest" time="0.01"/>
+  <testcase name="complexCase()" classname="study.querydsl.QuerydslBasicTest" time="0.041"/>
+  <testcase name="fetchJoinUse()" classname="study.querydsl.QuerydslBasicTest" time="0.011"/>
+  <testcase name="findUserDto()" classname="study.querydsl.QuerydslBasicTest" time="0.009"/>
+  <testcase name="join_on_no_join()" classname="study.querydsl.QuerydslBasicTest" time="0.015"/>
+  <testcase name="searchAndParam()" classname="study.querydsl.QuerydslBasicTest" time="0.007"/>
+  <testcase name="tupleProjection()" classname="study.querydsl.QuerydslBasicTest" time="0.006"/>
+  <testcase name="findDtoByConstructor()" classname="study.querydsl.QuerydslBasicTest" time="0.008"/>
+  <testcase name="join_on_filtering()" classname="study.querydsl.QuerydslBasicTest" time="0.01"/>
+  <testcase name="findDtoByJPQL()" classname="study.querydsl.QuerydslBasicTest" time="0.013"/>
+  <system-out><![CDATA[2024-07-28T21:28:45.925+09:00  INFO 32209 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [study.querydsl.QuerydslBasicTest]: QuerydslBasicTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-07-28T21:28:45.927+09:00  INFO 32209 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration study.querydsl.QuerydslApplication for test class study.querydsl.QuerydslBasicTest
+2024-07-28T21:28:45.935+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for team_seq
+2024-07-28T21:28:45.939+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for team_seq
+2024-07-28T21:28:45.940+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for member_seq
+2024-07-28T21:28:45.941+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for member_seq
+2024-07-28T21:28:45.973+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:45.974+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:45.974+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:45.975+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:45.976+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:45.976+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:45.978+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        m 
+    from
+        Member m 
+    where
+        m.username = :username */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.username=?
+2024-07-28T21:28:46.060+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.061+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.061+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.062+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.062+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.063+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.063+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age = (
+            select
+                max(memberSub.age) 
+            from
+                Member memberSub
+        ) */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.age=(
+                select
+                    max(m2_0.age) 
+                from
+                    member m2_0
+            )
+2024-07-28T21:28:46.184+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.185+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.186+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.187+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.188+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.188+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.189+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        count(member1),
+        sum(member1.age),
+        avg(member1.age),
+        max(member1.age),
+        min(member1.age) 
+    from
+        Member member1 */ select
+            count(m1_0.member_id),
+            sum(m1_0.age),
+            avg(cast(m1_0.age as float(53))),
+            max(m1_0.age),
+            min(m1_0.age) 
+        from
+            member m1_0
+2024-07-28T21:28:46.279+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.279+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.280+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.280+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.281+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.281+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.282+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        case 
+            when member1.age = ?1 
+                then ?2 
+            when member1.age = ?3 
+                then ?4 
+            else '기타' 
+        end 
+    from
+        Member member1 */ select
+            case 
+                when m1_0.age=? 
+                    then cast(? as varchar) 
+                when m1_0.age=? 
+                    then cast(? as varchar) 
+                else '기타' 
+            end 
+        from
+            member m1_0
+s : 열살
+s : 스무살
+s : 기타
+s : 기타
+2024-07-28T21:28:46.340+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.341+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.342+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.342+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.343+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.343+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.344+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        concat(concat(member1.username, ?1), str(member1.age)) 
+    from
+        Member member1 
+    where
+        member1.username = ?2 */ select
+            ((m1_0.username||?)||cast(m1_0.age as varchar)) 
+        from
+            member m1_0 
+        where
+            m1_0.username=?
+ s = member1_10
+2024-07-28T21:28:46.352+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.353+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.358+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.365+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.366+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.366+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.366+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username 
+    from
+        Member member1 */ select
+            m1_0.username 
+        from
+            member m1_0
+ s : member1
+ s : member2
+ s : member3
+ s : member4
+2024-07-28T21:28:46.372+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.372+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.372+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.373+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.373+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.374+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.376+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.username = ?1 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.username=?
+2024-07-28T21:28:46.390+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.391+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.392+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.392+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.393+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.393+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.394+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username,
+        member1.age 
+    from
+        Member member1 */ select
+            m1_0.username,
+            m1_0.age 
+        from
+            member m1_0
+memberDto = MemberDto(username=member1, age=10)
+memberDto = MemberDto(username=member2, age=20)
+memberDto = MemberDto(username=member3, age=30)
+memberDto = MemberDto(username=member4, age=40)
+2024-07-28T21:28:46.410+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.411+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.411+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.412+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.412+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.412+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.413+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username,
+        (select
+            avg(memberSub.age) 
+        from
+            Member memberSub) 
+    from
+        Member member1 */ select
+            m1_0.username,
+            (select
+                avg(cast(m2_0.age as float(53))) 
+            from
+                member m2_0) 
+        from
+            member m1_0
+tuple = [member1, 25.0]
+tuple = [member2, 25.0]
+tuple = [member3, 25.0]
+tuple = [member4, 25.0]
+2024-07-28T21:28:46.420+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.421+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.422+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.422+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.422+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.423+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.423+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        m1 
+    from
+        Member m1 
+    where
+        m1.username = ?1 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.username=?
+2024-07-28T21:28:46.437+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.438+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.438+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.439+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.439+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.439+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.440+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.username = ?1 
+        and member1.age between ?2 and ?3 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.username=? 
+            and m1_0.age between ? and ?
+2024-07-28T21:28:46.458+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.458+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.459+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.459+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.460+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.460+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.460+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age in (select
+            memberSub.age 
+        from
+            Member memberSub 
+        where
+            memberSub.age > ?1) */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.age in (select
+                m2_0.age 
+            from
+                member m2_0 
+            where
+                m2_0.age>?)
+2024-07-28T21:28:46.466+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for member_seq
+2024-07-28T21:28:46.472+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.473+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.473+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.474+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.474+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.475+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.475+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    order by
+        member1.username desc */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        order by
+            m1_0.username desc 
+        offset
+            ? rows 
+        fetch
+            first ? rows only
+2024-07-28T21:28:46.481+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.481+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.482+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.482+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.482+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.483+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.483+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        count(member1) 
+    from
+        Member member1 */ select
+            count(m1_0.member_id) 
+        from
+            member m1_0
+2024-07-28T21:28:46.484+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    order by
+        member1.username desc */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        order by
+            m1_0.username desc 
+        offset
+            ? rows 
+        fetch
+            first ? rows only
+2024-07-28T21:28:46.493+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.494+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.494+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.495+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.495+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.495+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.496+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username,
+        member1.age 
+    from
+        Member member1 */ select
+            m1_0.username,
+            m1_0.age 
+        from
+            member m1_0
+memberDto = MemberDto(username=member1, age=10)
+memberDto = MemberDto(username=member2, age=20)
+memberDto = MemberDto(username=member3, age=30)
+memberDto = MemberDto(username=member4, age=40)
+2024-07-28T21:28:46.505+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.505+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.506+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.506+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.507+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.509+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.509+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username 
+    from
+        Member member1 */ select
+            m1_0.username 
+        from
+            member m1_0
+ tuple : [member1, A]
+ tuple : [member2, A]
+ tuple : [member3, A]
+ tuple : [member4, A]
+2024-07-28T21:28:46.517+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.518+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.518+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.519+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.522+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.523+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.536+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        count(member1) 
+    from
+        Member member1 */ select
+            count(m1_0.member_id) 
+        from
+            member m1_0
+2024-07-28T21:28:46.553+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.554+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.554+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.554+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.555+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.555+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.556+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1   
+    inner join
+        member1.team as team 
+    where
+        team.name = ?1 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        join
+            team t1_0 
+                on t1_0.id=m1_0.team_id 
+        where
+            t1_0.name=?
+2024-07-28T21:28:46.564+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.564+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.565+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.565+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.565+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.566+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.566+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.567+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.567+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.567+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age = ?1 
+    order by
+        member1.age desc,
+        member1.username asc nulls last */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.age=? 
+        order by
+            m1_0.age desc,
+            m1_0.username asc nulls last
+2024-07-28T21:28:46.574+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.575+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.575+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.576+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.576+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.576+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.577+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        team.name,
+        avg(member1.age) 
+    from
+        Member member1   
+    inner join
+        member1.team as team 
+    group by
+        team.name */ select
+            t1_0.name,
+            avg(cast(m1_0.age as float(53))) 
+        from
+            member m1_0 
+        join
+            team t1_0 
+                on t1_0.id=m1_0.team_id 
+        group by
+            t1_0.name
+2024-07-28T21:28:46.584+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.584+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.585+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.585+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.585+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.586+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.586+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.age >= (
+            select
+                avg(memberSub.age) 
+            from
+                Member memberSub
+        ) */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.age>=(
+                select
+                    avg(cast(m2_0.age as float(53))) 
+                from
+                    member m2_0
+            )
+2024-07-28T21:28:46.594+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.594+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.595+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.595+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.595+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.596+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.596+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.596+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.596+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.597+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1,
+        Team team 
+    where
+        member1.username = team.name */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0,
+            team t1_0 
+        where
+            m1_0.username=t1_0.name
+2024-07-28T21:28:46.634+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.635+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.635+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.636+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.636+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.636+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.637+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        case 
+            when (member1.age between ?1 and ?2) 
+                then ?3 
+            when (member1.age between ?4 and ?5) 
+                then ?6 
+            else '기타' 
+        end 
+    from
+        Member member1 */ select
+            case 
+                when (m1_0.age between ? and ?) 
+                    then cast(? as varchar) 
+                when (m1_0.age between ? and ?) 
+                    then cast(? as varchar) 
+                else '기타' 
+            end 
+        from
+            member m1_0
+s : 0~20살
+s : 0~20살
+s : 21~30살
+s : 기타
+2024-07-28T21:28:46.642+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for member_seq
+2024-07-28T21:28:46.643+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.643+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.643+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.643+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.644+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.644+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.648+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1   
+    inner join
+        
+    fetch
+        member1.team as team 
+    where
+        member1.username = ?1 */ select
+            m1_0.member_id,
+            m1_0.age,
+            t1_0.id,
+            t1_0.name,
+            m1_0.username 
+        from
+            member m1_0 
+        join
+            team t1_0 
+                on t1_0.id=m1_0.team_id 
+        where
+            m1_0.username=?
+2024-07-28T21:28:46.656+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.656+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.657+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.657+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.657+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.657+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.658+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username as name,
+        (select
+            max(memberSub.age) 
+        from
+            Member memberSub) as age 
+    from
+        Member member1 */ select
+            m1_0.username,
+            (select
+                max(m2_0.age) 
+            from
+                member m2_0) 
+        from
+            member m1_0
+memberDto = UserDto(name=member1, age=40)
+memberDto = UserDto(name=member2, age=40)
+memberDto = UserDto(name=member3, age=40)
+memberDto = UserDto(name=member4, age=40)
+2024-07-28T21:28:46.662+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for team_seq
+2024-07-28T21:28:46.670+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.671+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.671+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.672+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.672+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.672+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.672+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.673+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.673+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.673+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1,
+        team 
+    from
+        Member member1   
+    left join
+        Team team with member1.username = team.name 
+    where
+        member1.username = team.name */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username,
+            t1_0.id,
+            t1_0.name 
+        from
+            member m1_0 
+        left join
+            team t1_0 
+                on m1_0.username=t1_0.name 
+        where
+            m1_0.username=t1_0.name
+tuple = [Member(id=111, username=teamA), study.querydsl.entity.Team@7d7fc466]
+tuple = [Member(id=112, username=teamB), study.querydsl.entity.Team@1c2a9464]
+2024-07-28T21:28:46.680+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.680+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.680+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.681+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.681+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.681+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.682+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1 
+    from
+        Member member1 
+    where
+        member1.username = ?1 
+        and member1.age = ?2 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0 
+        where
+            m1_0.username=? 
+            and m1_0.age=?
+2024-07-28T21:28:46.686+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.687+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.687+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.687+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.688+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.688+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.688+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username,
+        member1.age 
+    from
+        Member member1 */ select
+            m1_0.username,
+            m1_0.age 
+        from
+            member m1_0
+username = member1
+age = 10
+username = member2
+age = 20
+username = member3
+age = 30
+username = member4
+age = 40
+2024-07-28T21:28:46.694+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.695+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.695+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.696+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.696+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.696+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.697+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1.username,
+        member1.age 
+    from
+        Member member1 */ select
+            m1_0.username,
+            m1_0.age 
+        from
+            member m1_0
+memberDto = UserDto(name=member1, age=10)
+memberDto = UserDto(name=member2, age=20)
+memberDto = UserDto(name=member3, age=30)
+memberDto = UserDto(name=member4, age=40)
+2024-07-28T21:28:46.702+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.703+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.704+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.704+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.704+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.705+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.706+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        member1,
+        team 
+    from
+        Member member1   
+    left join
+        member1.team as team with team.name = ?1 */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username,
+            t1_0.id,
+            t1_0.name 
+        from
+            member m1_0 
+        left join
+            team t1_0 
+                on t1_0.id=m1_0.team_id 
+                and t1_0.name=?
+tuple = [Member(id=126, username=member1), study.querydsl.entity.Team@1065f09]
+tuple = [Member(id=127, username=member2), study.querydsl.entity.Team@1065f09]
+tuple = [Member(id=128, username=member3), null]
+tuple = [Member(id=129, username=member4), null]
+2024-07-28T21:28:46.719+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.719+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.719+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.720+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.720+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.721+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.722+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        new study.querydsl.dto.MemberDto(m.username, m.age) m 
+    from
+        Member m */ select
+            m1_0.username,
+            m1_0.age 
+        from
+            member m1_0
+memberDto = MemberDto(username=member1, age=10)
+memberDto = MemberDto(username=member2, age=20)
+memberDto = MemberDto(username=member3, age=30)
+memberDto = MemberDto(username=member4, age=40)
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

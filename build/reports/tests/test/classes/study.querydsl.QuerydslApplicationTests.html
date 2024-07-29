@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.483s</div>
+<div class="counter">0.609s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.483s</td>
+<td class="success">0.609s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>20:13:06.754 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [study.querydsl.QuerydslApplicationTests]: QuerydslApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-20:13:06.813 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration study.querydsl.QuerydslApplication for test class study.querydsl.QuerydslApplicationTests
+<pre>21:28:43.333 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [study.querydsl.QuerydslApplicationTests]: QuerydslApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:28:43.389 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration study.querydsl.QuerydslApplication for test class study.querydsl.QuerydslApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,21 +98,92 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.2.4)
 
-2024-07-23T20:13:07.022+09:00  INFO 5868 --- [querydsl] [    Test worker] s.querydsl.QuerydslApplicationTests      : Starting QuerydslApplicationTests using Java 18.0.2.1 with PID 5868 (started by jeonghoeyul in /Users/jeonghoeyul/Desktop/source/git/QueryDSL)
-2024-07-23T20:13:07.023+09:00  INFO 5868 --- [querydsl] [    Test worker] s.querydsl.QuerydslApplicationTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2024-07-23T20:13:07.365+09:00  INFO 5868 --- [querydsl] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-07-23T20:13:07.376+09:00  INFO 5868 --- [querydsl] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2024-07-23T20:13:07.608+09:00  INFO 5868 --- [querydsl] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-07-23T20:13:07.720+09:00  INFO 5868 --- [querydsl] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:bbc3fd79-45cc-4c59-bbf2-e381a61d1e9c user=SA
-2024-07-23T20:13:07.721+09:00  INFO 5868 --- [querydsl] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-07-23T20:13:07.753+09:00  INFO 5868 --- [querydsl] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-07-23T20:13:07.796+09:00  INFO 5868 --- [querydsl] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
-2024-07-23T20:13:07.821+09:00  INFO 5868 --- [querydsl] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-07-23T20:13:07.957+09:00  INFO 5868 --- [querydsl] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-07-23T20:13:08.178+09:00  INFO 5868 --- [querydsl] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-07-23T20:13:08.181+09:00  INFO 5868 --- [querydsl] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-07-23T20:13:08.275+09:00  WARN 5868 --- [querydsl] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-07-23T20:13:08.519+09:00  INFO 5868 --- [querydsl] [    Test worker] s.querydsl.QuerydslApplicationTests      : Started QuerydslApplicationTests in 1.626 seconds (process running for 2.26)
+2024-07-28T21:28:43.612+09:00  INFO 32209 --- [    Test worker] s.querydsl.QuerydslApplicationTests      : Starting QuerydslApplicationTests using Java 18.0.2.1 with PID 32209 (started by jeonghoeyul in /Users/jeonghoeyul/Desktop/source/git/QueryDSL)
+2024-07-28T21:28:43.613+09:00  INFO 32209 --- [    Test worker] s.querydsl.QuerydslApplicationTests      : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2024-07-28T21:28:43.922+09:00  INFO 32209 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-07-28T21:28:43.936+09:00  INFO 32209 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2024-07-28T21:28:44.172+09:00  INFO 32209 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-07-28T21:28:44.197+09:00  INFO 32209 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-07-28T21:28:44.216+09:00  INFO 32209 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-07-28T21:28:44.337+09:00  INFO 32209 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-07-28T21:28:44.352+09:00  INFO 32209 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-07-28T21:28:44.415+09:00  INFO 32209 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/jpashop user=SA
+2024-07-28T21:28:44.416+09:00  INFO 32209 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-07-28T21:28:44.964+09:00  INFO 32209 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-07-28T21:28:44.971+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists hello cascade 
+2024-07-28T21:28:44.973+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists member cascade 
+2024-07-28T21:28:44.974+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists team cascade 
+2024-07-28T21:28:44.975+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists test cascade 
+2024-07-28T21:28:44.975+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists hello_seq
+2024-07-28T21:28:44.976+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists member_seq
+2024-07-28T21:28:44.976+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists team_seq
+2024-07-28T21:28:44.977+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists test_seq
+2024-07-28T21:28:44.980+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence hello_seq start with 1 increment by 50
+2024-07-28T21:28:44.980+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence member_seq start with 1 increment by 50
+2024-07-28T21:28:44.981+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence team_seq start with 1 increment by 50
+2024-07-28T21:28:44.981+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence test_seq start with 1 increment by 50
+2024-07-28T21:28:44.983+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create table hello (
+        id bigint not null,
+        primary key (id)
+    )
+2024-07-28T21:28:44.984+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create table member (
+        age integer not null,
+        member_id bigint not null,
+        team_id bigint,
+        username varchar(255),
+        primary key (member_id)
+    )
+2024-07-28T21:28:44.985+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create table team (
+        id bigint not null,
+        name varchar(255),
+        primary key (id)
+    )
+2024-07-28T21:28:44.986+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    create table test (
+        id bigint not null,
+        primary key (id)
+    )
+2024-07-28T21:28:44.987+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists member 
+       add constraint FKcjte2jn9pvo9ud2hyfgwcja0k 
+       foreign key (team_id) 
+       references team
+2024-07-28T21:28:44.991+09:00  INFO 32209 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-07-28T21:28:45.072+09:00  WARN 32209 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-28T21:28:45.301+09:00  INFO 32209 --- [    Test worker] s.querydsl.QuerydslApplicationTests      : Started QuerydslApplicationTests in 1.834 seconds (process running for 2.56)
+2024-07-28T21:28:45.672+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for hello_seq
+2024-07-28T21:28:45.866+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Hello */insert 
+    into
+        hello (id) 
+    values
+        (?)
+2024-07-28T21:28:45.881+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        hello 
+    from
+        Hello hello */ select
+            h1_0.id 
+        from
+            hello h1_0
 </pre>
 </span>
 </div>
@@ -124,7 +195,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 7. 23. 오후 8:13:09</p>
+<a href="http://www.gradle.org">Gradle 8.8</a> at 2024. 7. 28. 오후 9:28:46</p>
 </div>
 </div>
 </body>

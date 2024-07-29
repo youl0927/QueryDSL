@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="study.querydsl.entity.MemberTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-07-28T12:28:46" hostname="jeonghoeyul-ui-MacBookPro.local" time="0.012">
+  <properties/>
+  <testcase name="testEnttiy()" classname="study.querydsl.entity.MemberTest" time="0.012"/>
+  <system-out><![CDATA[2024-07-28T21:28:46.725+09:00  INFO 32209 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [study.querydsl.entity.MemberTest]: MemberTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-07-28T21:28:46.730+09:00  INFO 32209 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration study.querydsl.QuerydslApplication for test class study.querydsl.entity.MemberTest
+2024-07-28T21:28:46.733+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.733+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Team */insert 
+    into
+        team (name, id) 
+    values
+        (?, ?)
+2024-07-28T21:28:46.734+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.734+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.734+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.734+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* insert for
+        study.querydsl.entity.Member */insert 
+    into
+        member (age, team_id, username, member_id) 
+    values
+        (?, ?, ?, ?)
+2024-07-28T21:28:46.735+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    /* select
+        m 
+    from
+        Member m */ select
+            m1_0.member_id,
+            m1_0.age,
+            m1_0.team_id,
+            m1_0.username 
+        from
+            member m1_0
+member = Member(id=134, username=membert1)
+2024-07-28T21:28:46.738+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.name 
+    from
+        team t1_0 
+    where
+        t1_0.id=?
+->member = study.querydsl.entity.Team@18cc07ca
+member = Member(id=135, username=membert2)
+->member = study.querydsl.entity.Team@18cc07ca
+member = Member(id=136, username=membert3)
+2024-07-28T21:28:46.741+09:00 DEBUG 32209 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.name 
+    from
+        team t1_0 
+    where
+        t1_0.id=?
+->member = study.querydsl.entity.Team@4b3642c4
+member = Member(id=137, username=membert4)
+->member = study.querydsl.entity.Team@4b3642c4
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
