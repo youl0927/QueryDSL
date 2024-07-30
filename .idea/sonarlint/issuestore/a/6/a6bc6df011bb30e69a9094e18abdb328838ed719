@@ -1,0 +1,16 @@
+
+‹
+java:S1192&"IDefine a constant instead of duplicating this literal "teamName" 3 times.(Â¡‹8Ø³˜Ÿ2J$b8d3b247-efd1-45e0-a3d6-10359761ed7f
+Š
+java:S1192%"GDefine a constant instead of duplicating this literal "teamId" 3 times.(Â•œİ8Ø³˜Ÿ2J$47adc624-1304-4f86-a754-97f0b1220a13
+‘
+java:S1192""IDefine a constant instead of duplicating this literal "memberId" 3 times.(É²Ø’øÿÿÿÿ8Ø³˜Ÿ2J$ca8254a6-a92a-4e0e-9e5f-e7e57bde037f
+¡
+java:S1488j"^Immediately return this expression instead of assigning it to the temporary variable "result".(³šË8Ù³˜Ÿ2J$095b4078-dcbf-408f-8c87-ad629921c35b
+|
+java:S1874H"4Remove this use of "fetchResults"; it is deprecated.(±Ğüùÿÿÿÿ8š´˜Ÿ2J$8b46913c-90dc-4529-830d-c9e04e732fea
+~	java:S125W"<This block of commented-out lines of code should be removed.(¿ßœğ8›´˜Ÿ2J$766c4d4e-f462-4a39-979a-356e13b5a601
+u
+java:S1874X"2Remove this use of "fetchCount"; it is deprecated.(ÒĞ£™8œ´˜Ÿ2J$c98a441e-5ab4-4ebb-836d-4309840bbe57
+©
+java:S1128"fRemove this unused import 'org.springframework.data.jpa.repository.support.QuerydslRepositorySupport'.(‹áãß8øê˜Ÿ2J$3319f6d1-2f77-44c5-afe5-d66cc53218ac

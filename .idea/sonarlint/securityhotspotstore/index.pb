@@ -47,3 +47,5 @@ s
 Csrc/main/java/study/querydsl/repository/MemberRepositoryCustom.java,7/b/7be1ea8800815b847554e6d5cc74e3b52c1acc09
 q
 Asrc/main/java/study/querydsl/repository/MemberRepositoryImpl.java,a/6/a6bc6df011bb30e69a9094e18abdb328838ed719
+
+Osrc/main/java/study/querydsl/repository/suppert/Querydsl4RepositorySupport.java,f/c/fc569771463326b361b683ec78fb78e48387cb3d
